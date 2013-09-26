@@ -15,13 +15,18 @@ import json
 
 
 lines = sys.stdin.readlines()
-params = {'sql': lines[0], 'reindent': 1}
+l = ""
+for line in lines:
+    l += line
+
+print l
+#sql = lines[0]
+#sql = sql.replace('\r', '')
+#print sql
+params = {'sql': l, 'reindent': 1}
 response = urllib2.urlopen('http://sqlformat.org/api/v1/format', data=urllib.urlencode(params))
 data = json.loads(response.read())
 print data['result']
-
-  
-    
     </string>
 	<key>contact</key>
 	<string>whfgva@wnzrfwjvyfba.pbz</string>
@@ -34,14 +39,14 @@ print data['result']
 	<key>internalKeyEquivalent</key>
 	<dict>
 		<key>characters</key>
-		<string>K</string>
+		<string>T</string>
 		<key>keyCode</key>
-		<integer>40</integer>
+		<integer>17</integer>
 		<key>modifierFlags</key>
 		<integer>1703936</integer>
 	</dict>
 	<key>keyEquivalent</key>
-	<string>~$@K</string>
+	<string>~$@T</string>
 	<key>name</key>
 	<string>Tidy SQL</string>
 	<key>output</key>
