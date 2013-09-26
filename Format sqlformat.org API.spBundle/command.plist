@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>author</key>
+	<string>Jwilson</string>
+	<key>category</key>
+	<string>Format</string>
+	<key>command</key>
+	<string>#!/usr/bin/python
+import sys
+import sqlparse 
+import urllib2, urllib
+import json
+
+
+lines = sys.stdin.readlines()
+params = {'sql': lines[0], 'reindent': 1}
+response = urllib2.urlopen('http://sqlformat.org/api/v1/format', data=urllib.urlencode(params))
+data = json.loads(response.read())
+print data['result']
+
+  
+    
+    </string>
+	<key>contact</key>
+	<string>whfgva@wnzrfwjvyfba.pbz</string>
+	<key>description</key>
+	<string>Tidy MYSQL with sqlformat.org API</string>
+	<key>input</key>
+	<string>selectedtext</string>
+	<key>input_fallback</key>
+	<string>currentquery</string>
+	<key>internalKeyEquivalent</key>
+	<dict>
+		<key>characters</key>
+		<string>K</string>
+		<key>keyCode</key>
+		<integer>40</integer>
+		<key>modifierFlags</key>
+		<integer>1703936</integer>
+	</dict>
+	<key>keyEquivalent</key>
+	<string>~$@K</string>
+	<key>name</key>
+	<string>Tidy SQL</string>
+	<key>output</key>
+	<string>insertastext</string>
+	<key>scope</key>
+	<string>inputfield</string>
+	<key>tooltip</key>
+	<string>Format SQL with sqlformat.org</string>
+	<key>trigger</key>
+	<string>none</string>
+	<key>uuid</key>
+	<string>07F0C956-6186-4CAA-9754-1734607815E7</string>
+</dict>
+</plist>

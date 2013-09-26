@@ -1,4 +1,4 @@
 sequelpro-format-SQL-with-sqlformat.org
 =======================================
 
-Uses sqlformat.org to Format SQL in Sequel Pro
+This is a bundle that will reformat selected text in Sequel Pro using the sqlformat.org API.
